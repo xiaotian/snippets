@@ -1,0 +1,19 @@
+
+dm.chg   change_table
+dm.crt   create_table
+
+dm.b      boolean
+dm.bi     binary
+dm.d      date
+dm.dt     datetime
+dm.dec    decimal
+dm.f      float
+dm.i      integer
+dm.pk     primary_key
+dm.r      reference
+dm.s      string
+dm.txt    text
+dm.t      time
+dm.ts     timestamp
+
+

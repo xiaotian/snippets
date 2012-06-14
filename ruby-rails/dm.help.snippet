@@ -1,0 +1,72 @@
+# add a column
+t.column :column_name, type [, options]
+
+# change a column
+t.change :column_name, type [, options]
+
+  options -
+  :null        true/false
+  :default    default value
+  :limit      max column length.  chars for string/text, bytes for integer/binary
+  :precision  precision for decimal
+  :scale      scale for decimal
+
+# rename a column
+t.rename :column_from, :column_to
+
+# change column default value
+t.change_default :column_name, default_value
+
+# remove column(s)
+t.remove *columns
+
+# add timestamps
+t.timestamps
+
+# remove timestamps
+t.remove_timestamps
+
+# add a reference
+t.references :ref [, polymorphic: true]
+  add column :ref_id, and :ref_type if polymorphic: true
+
+# remove a reference
+t.remove_references :ref [, polymorphic: true]
+
+# add a index
+t.index :column_name|column_list [,options]
+  options:
+  :unique      true/false
+  :name        specify name of the index
+  :length      key length. eg. length: 10;  length: {col1: 10, col2: 16}
+  :order       sort order. eg. order: {col1: :asc, col2: :desc}
+
+# remove a index
+t.remove_index options
+  t.remove_index :col1
+  t.remove_index columns:[:col1, :colu2]
+  t.remove_index name: "index_name"
+
+# check if a column exists
+t.column_exists? :column_name, type = nil, options = {}
+
+# check if a index exist on column(s)
+t.index_exists? :column_name(s), options = {}
+
+# supported types:
+boolean
+binary
+date
+datetime
+decimal
+float
+integer
+primary_key
+reference
+string
+text
+time
+timestamp
+timestamps
+
+
