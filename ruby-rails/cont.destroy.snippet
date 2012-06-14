@@ -1,0 +1,12 @@
+# DELETE /${5:$1}s/1
+# DELETE /${6:$1}s/1.json
+def destroy
+	@${1:model} = ${2:Class}.find(params[:id])
+	@${3:$1}.destroy
+
+	respond_to do |format|
+		format.html { redirect_to ${4:$1}s_url }
+		format.json { head :no_content }
+	end
+end
+${7}

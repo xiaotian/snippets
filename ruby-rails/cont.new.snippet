@@ -1,0 +1,11 @@
+# GET /${4:$1}s/new
+# GET /${5:$1}s/new.json
+def new
+	@${1:model} = ${2:Class}.new
+
+	respond_to do |format|
+		format.html # new.html.erb
+		format.json { render json: @${3:$1} }
+	end
+end
+${6}

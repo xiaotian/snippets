@@ -1,0 +1,16 @@
+# POST /${10:$1}s
+# POST /${11:$1}s.json
+def create
+	@${1:model} = ${2:Class}.new(params[:${3:$1}])
+
+	respond_to do |format|
+		if @${4:$1}.save
+			format.html { redirect_to @${5:$1}, notice: '${6:$2} was successfully created.' }
+			format.json { render json: @${7:$1}, status: :created, location: @${8:$1} }
+		else
+			format.html { render action: "new" }
+			format.json { render json: @${9:$1}.errors, status: :unprocessable_entity }
+		end
+	end
+end
+${12}

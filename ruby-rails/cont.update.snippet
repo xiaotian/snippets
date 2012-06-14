@@ -1,0 +1,16 @@
+# PUT /${8:$1}s/1
+# PUT /${9:$1}s/1.json
+def update
+	@${1:model} = ${2:Class}.find(params[:id])
+
+	respond_to do |format|
+		if @${3:$1}.update_attributes(params[:${4:$1}])
+			format.html { redirect_to @${5:$1}, notice: '${6:$2} was successfully updated.' }
+			format.json { head :no_content }
+		else
+			format.html { render action: "edit" }
+			format.json { render json: @${7:$1}.errors, status: :unprocessable_entity }
+		end
+	end
+end
+${10}

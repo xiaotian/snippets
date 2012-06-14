@@ -1,0 +1,11 @@
+# GET /${4:$1}
+# GET /${5:$1}.json
+def index
+	@${1:models} = ${2:Class}.all
+
+	respond_to do |format|
+		format.html # index.html.erb
+		format.json { render json: @${3:$1} }
+	end
+end
+${6}
